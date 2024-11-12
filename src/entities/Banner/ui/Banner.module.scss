@@ -1,0 +1,80 @@
+.sectionBanner {
+  padding: clamp(20px, 2vw, 40px) 0;
+
+  .banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(10px, 2vw, 20px);
+    padding: clamp(10px, 2vw, 20px) 0px;
+
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: 1fr;
+    }
+
+    .left {
+      padding-top: clamp(15px, 2vw, 30px);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(13px, 2vw, 30px);
+
+      .bannerTitle {
+        font-size: clamp(25px, 3vw, 50px);
+        font-family: var(--font-nunito);
+        color: var(--color-primary);
+      }
+
+      .bannerDesc {
+        font-size: clamp(15px, 2vw, 22px);
+      }
+
+      .btnActions {
+        display: flex;
+        width: 100%;
+        gap: clamp(10px, 2vw, 20px);
+
+        @media screen and (max-width: 600px) {
+          flex-direction: column;
+        }
+
+        .btnAction {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 15px 30px;
+          border-radius: 15px;
+          text-align: center;
+          text-wrap: nowrap;
+        }
+      }
+
+      .textItems {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        & > li {
+          font-size: clamp(16px, 2vw, 19px);
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      overflow: hidden;
+
+      @media screen and (max-width: 1200px) {
+        display: none;
+      }
+
+      img {
+        display: flex;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.btn {
+  padding: 10px 20px;
+  font-size: clamp(14px, 2vw, 16px);
+  text-transform: capitalize;
+  border-radius: var(--btn-border-radius);
+  transition: background-color 200ms, color 200ms, border 200ms ease;
+}
+
+@mixin btnDefaultDashed($borderStyle) {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px $borderStyle var(--btn-color-gray);
+
+  &:hover {
+    border-color: var(--color-primary-light);
+    color: var(--color-primary-light);
+  }
+}
+
+@mixin btnPrimaryText($color, $bgColor, $bgColorHover) {
+  color: $color;
+  background-color: $bgColor;
+
+  &:hover {
+    background-color: $bgColorHover;
+  }
+}
+
+.primary {
+  @include btnPrimaryText(
+    var(--color-white),
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+}
+
+.default {
+  @include btnDefaultDashed(solid);
+}
+
+.dashed {
+  @include btnDefaultDashed(dashed);
+}
+
+.text {
+  @include btnPrimaryText(
+    var(--color-black),
+    transparent,
+    var(--btn-color-gray-light)
+  );
+}

@@ -1,0 +1,18 @@
+.header {
+  padding: 20px 0px;
+  box-shadow: 0 4px 18px -1px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-white);
+
+  .headerInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(7px, 2vw, 15px);
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: clamp(7px, 2vw, 12px);
+    }
+  }
+}

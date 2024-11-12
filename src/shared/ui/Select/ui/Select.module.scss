@@ -1,0 +1,66 @@
+.selectWrapper {
+  position: relative;
+
+  @mixin bgSelect($py, $px) {
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 7px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-gray-light);
+    border-radius: 3px;
+    padding: $py $px;
+  }
+
+  .select {
+    @include bgSelect(7px, 12px);
+
+    font-size: clamp(14px, 2vw, 16px);
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+
+    span {
+      display: flex;
+      font-size: 11px;
+    }
+  }
+
+  .values {
+    @include bgSelect(0, 0);
+
+    position: absolute;
+    top: 120%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 200ms, visibility 200ms ease;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+
+    .value {
+      padding: 7px 10px;
+      cursor: pointer;
+      text-transform: capitalize;
+      border-bottom: 1px solid var(--color-gray);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover,
+      &.active {
+        background-color: var(--color-gray-light);
+      }
+    }
+  }
+}
